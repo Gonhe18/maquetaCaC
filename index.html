@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Maqueta</title>
+	</head>
+	<body class="min-h-screen flex flex-col justify-between">
+		<header class="py-4 px-10 flex justify-between items-center bg-lime-100">
+			<img src="./img/logo.png" alt="Logo web" class="w-16" />
+			<h1 class="text-3xl font-bold">SDT Argentina</h1>
+		</header>
+
+		<main class="grow bg-gray-50 flex flex-col">
+			<section class="flex flex-row mx-8 justify-between m-6">
+				<h2 class="text-2xl font-bold">Gestión de trámites</h2>
+				<a
+					href="/crear.html"
+					class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+				>
+					Nuevo trámite
+				</a>
+			</section>
+			<section class="mx-8">
+				<table class="w-full shadow-2xl">
+					<thead class="bg-blue-900 text-white border-2 border-blue-900">
+						<tr class="grid grid-cols-5 py-2 items-center uppercase">
+							<th>Fecha</th>
+							<th class="col-span-2">Trámite</th>
+							<th>Estado</th>
+							<th>Acción</th>
+						</tr>
+					</thead>
+					<tbody class="border-blue-900 border-2">
+						<tr class="grid grid-cols-5 py-2 items-center" id="tram1">
+							<th>11/04/2023</th>
+							<th class="col-span-2">Lorem, ipsum dolor.</th>
+							<th>En gestión</th>
+							<th>
+								<a href="/cambiarEstado.html" title="Cambiar de estado">
+									<box-icon
+										type="solid"
+										name="book-content"
+										color="green"
+									></box-icon>
+								</a>
+								<button title="Eliminar" onclick="eliminar(1)">
+									<box-icon
+										type="solid"
+										name="trash"
+										color="red"
+									></box-icon>
+								</button>
+							</th>
+						</tr>
+						<tr class="grid grid-cols-5 py-1 items-center" id="tram2">
+							<th>20/03/2023</th>
+							<th class="col-span-2">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Beatae, porro.
+							</th>
+							<th>Finalizado</th>
+							<th>
+								<a href="/cambiarEstado.html" title="Cambiar de estado">
+									<box-icon
+										type="solid"
+										name="book-content"
+										color="green"
+									></box-icon>
+								</a>
+								<button title="Eliminar" onclick="eliminar(2)">
+									<box-icon
+										type="solid"
+										name="trash"
+										color="red"
+									></box-icon>
+								</button>
+							</th>
+						</tr>
+						<tr class="grid grid-cols-5 py-1 items-center" id="tram3">
+							<th>01/04/2023</th>
+							<th class="col-span-2">
+								Lorem ipsum dolor sit amet consectetur.
+							</th>
+							<th>Recibido</th>
+							<th>
+								<a href="/cambiarEstado.html" title="Cambiar de estado">
+									<box-icon
+										type="solid"
+										name="book-content"
+										color="green"
+									></box-icon>
+								</a>
+								<button title="Eliminar" onclick="eliminar(3)">
+									<box-icon
+										type="solid"
+										name="trash"
+										color="red"
+									></box-icon>
+								</button>
+							</th>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section class="mt-14 mx-auto">
+				<a
+					href="/contacto.html"
+					class="text-xl font-bold border-2 py-4 px-10 rounded-full bg-lime-400 hover:bg-lime-200 border-lime-300"
+					>Contacto</a
+				>
+			</section>
+		</main>
+
+		<footer class="bg-slate-200 content-end">
+			<p class="text-center font-semibold py-1">Codo a Codo - Python 2023</p>
+		</footer>
+		<script>
+			function eliminar(id) {
+				let tramite = document.getElementById("tram" + id);
+				tramite.setAttribute("class", "hidden");
+				alert("Trámite eliminado exitosamente");
+			}
+		</script>
+		<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</body>
+</html>
