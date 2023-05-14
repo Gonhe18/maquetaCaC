@@ -142,17 +142,19 @@
 						.then((resp) => resp.json())
 						.then((data) => {
 							console.log(data);
-							$ico_tiempo = document.getElementById("ico_tiempo");
-							$temp = document.getElementById("temp");
-							$descrip = document.getElementById("descrip");
-							$loc = document.getElementById("loc");
+							if (data) {
+								$ico_tiempo = document.getElementById("ico_tiempo");
+								$temp = document.getElementById("temp");
+								$descrip = document.getElementById("descrip");
+								$loc = document.getElementById("loc");
 
-							$ico_tiempo.src =
-								"https://openweathermap.org/img/wn/01d.png";
+								$ico_tiempo.src =
+									"https://openweathermap.org/img/wn/01d.png";
 
-							$temp.innerText = data.main.temp + "°";
-							$descrip.innerText = data.weather[0].description;
-							$loc.innerText = data.name;
+								$temp.innerText = data.main.temp + "°";
+								$descrip.innerText = data.weather[0].description;
+								$loc.innerText = data.name;
+							}
 						});
 				});
 			});
