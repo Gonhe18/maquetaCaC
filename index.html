@@ -8,7 +8,7 @@
 	</head>
 	<body class="min-h-screen flex flex-col justify-between">
 		<header class="py-4 px-10 flex justify-between items-center bg-lime-100">
-			<div id="tiempo" class="flex flex-col min-h-full">
+			<div id="tiempo" class="hidden">
 				<div class="flex flex-row">
 					<img src="" alt="Icono tiempo" id="ico_tiempo" class="w-12" />
 					<div
@@ -143,10 +143,16 @@
 						.then((data) => {
 							console.log(data);
 							if (data) {
+								$tiempo = document.getElementById("tiempo");
 								$ico_tiempo = document.getElementById("ico_tiempo");
 								$temp = document.getElementById("temp");
 								$descrip = document.getElementById("descrip");
 								$loc = document.getElementById("loc");
+
+								$tiempo.setAttibute(
+									"class",
+									"flex flex-col min-h-full"
+								);
 
 								$ico_tiempo.src =
 									"https://openweathermap.org/img/wn/01d.png";
